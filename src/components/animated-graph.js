@@ -1,3 +1,14 @@
+/**
+	This web component implements a canvas-based animation taken from the excellent youtube channel, Franks laboratory.
+
+	https://www.youtube.com/@Frankslaboratory
+
+	Highly recommended for developers who want to learn about writing visual animations using the html5 canvas tag.
+
+	I decided to implement the animation as a web component using the lit-element library, in order to review & refine
+	my web component skills. I love standards-based web development using libraries that are elegantly designed to
+	simplify the use of vanilla js, html & css.
+*/
 import { LitElement, css, html } from 'lit'
 import { util } from '../scripts/util.js';
 
@@ -12,9 +23,16 @@ export class AnimatedGraph extends LitElement {
 	}
 
 	render() {
+		// lit-element is great, because it allows you to write your web components with html tags encoded in
+		// interpolated strings, rather than writing messy DOM js code. You get a simple set of methods & lifecycle events
+		// very similar to react, but without the virtual DOM overhead
 		return html`<canvas id="animated-graph"></canvas>`;
 	}
 
+	/**
+		This closure implements the Particle physics as described in Franks Laboratory, with a few minor alterations
+		to make it work the way I want
+	*/
 	renderCanvas() {
 		const canvas = this.renderRoot.querySelector('#animated-graph');
 		const ctx = canvas.getContext('2d');
@@ -79,9 +97,12 @@ export class AnimatedGraph extends LitElement {
 			}
 		}
 
+		/**
+			Initialize the particle set
+		*/
 		const init = () => {
-			// Initialize the particle set
-			const speedFactor = .05;
+			const speedFactor = .05; 
+			const particleVelocity = () => (Math.random() * (2.5 * speedFactor)) - (1.25 * speedFactor);
 
 			particles = [];
 			let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -89,14 +110,17 @@ export class AnimatedGraph extends LitElement {
 				let size = (Math.random() * 5) + 1;
 				let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
 				let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-				let directionX = (Math.random() * (2.5 * speedFactor)) - (1.25 * speedFactor);
-				let directionY = (Math.random() * (2.5 * speedFactor)) - (1.25 * speedFactor);
+				let directionX = particleVelocity();
+				let directionY = particleVelocity();
 				let color = '#d3d3d3';
 
 				particles.push(new Particle(x, y, directionX, directionY, size, color));
 			}
 		}
 
+		/**
+			Animation loop
+		*/
 		const animate = () => {
 			requestAnimationFrame(animate);
 
@@ -116,16 +140,22 @@ export class AnimatedGraph extends LitElement {
 			init();
 		});
 
+		// GO!
 		init();
 		animate();
 	}
 
-
-
+	/**
+		lit-element lifecycle event handler. Runs init code for your element once it has attached to your document
+	*/
 	firstUpdated() {
 		this.renderCanvas();
 	}
 
+	/**
+		lit-element interpolated string for defining your css at the component-level. Similar to how react does it, but
+		nicer
+	*/
 	static get styles() {
 		return css`
 			#animated-graph {
@@ -144,4 +174,5 @@ export class AnimatedGraph extends LitElement {
 	}
 }
 
+// Register this web component
 window.customElements.define('animated-graph', AnimatedGraph);
