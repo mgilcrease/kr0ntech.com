@@ -21,6 +21,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
 	flex-direction: column;
+	background: none;
+	color: #dededf;
 }
 
 @media (prefers-color-scheme: light) {
@@ -31,67 +33,14 @@ body {
 }
 
 #site-header {
-	width: 100%;
-	text-align: center;
 	background-color: #211f5e;
-	margin-bottom: 20px;
-}
-
-#logo {
-	width: 150px;
-}
-
-#headshot {
-	width: 250px;
-}
-
-#resume {
 	width: 100%;
 }
 
-#resume section {
-	margin-bottom: 20px;
-	background-color: #ffffff;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+#site-header nav a.navbar-brand {
+	color: #dededf;
 }
 
-#intro {
-	background: radial-gradient(#fafafa, #ffffff);
-	width: 100%;
-}
-
-#intro	p {
-	width: 50%;
-}
-
-#additional-skills {
-	display: grid !important;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
-	grid-auto-rows: minmax(250px, auto);
-}
-
-#additional-skills h3 {
-	grid-row: 1;
-	grid-column: 1/2;
-}
-#additional-skills ul.left {
-	width: 50%;
-	grid-row: 2;
-	grid-column: 1;
-}
-
-#additional-skills ul.right {
-	width: 50%;
-	grid-row: 2;
-	grid-column: 2;
-}
-
-#site-footer {
-	width: 100%;
-	text-align: center;
-	padding: 10px 10px 10px 10px;
+#site-header nav a.nav-link {
+	color: #dededf;
 }

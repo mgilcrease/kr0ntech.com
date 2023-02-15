@@ -61,7 +61,7 @@ export class AnimatedGraph extends LitElement {
 				ctx.fill();	
 			}
 
-			// check particle position, check mouse position, move the particle, draw the particle
+			// update position & redraw particle
 			update() {
 				if (this.x > canvas.width || this.x < 0) {
 					this.directionX = -this.directionX;
@@ -136,7 +136,6 @@ export class AnimatedGraph extends LitElement {
 		window.addEventListener('resize', function() {
 			canvas.width = innerWidth;
 			canvas.height = innerHeight;
-			mouse.radius = ((canvas.height/80) * (canvas.height/80));
 			init();
 		});
 
