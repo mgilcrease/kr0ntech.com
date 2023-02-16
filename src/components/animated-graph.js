@@ -9,7 +9,7 @@
 	my web component skills. I love standards-based web development using libraries that are elegantly designed to
 	simplify the use of vanilla js, html & css.
 */
-import { LitElement, css, html } from 'lit-element'
+import { LitElement, css, html } from 'lit'
 
 export class AnimatedGraph extends LitElement {
 	static get properties() {

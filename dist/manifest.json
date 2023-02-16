@@ -1,0 +1,11 @@
+{
+  "index.html": {
+    "file": "kr0ntech.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "style.css": {
+    "file": "style.css",
+    "src": "style.css"
+  }
+}
