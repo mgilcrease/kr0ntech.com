@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +14,8 @@ export default defineConfig({
       external: /^lit/,
 			input: {
 				main: resolve(__dirname, 'index.html'),
-			}
+			},
+			plugins: [nodeResolve()]
     },
   },
 })
