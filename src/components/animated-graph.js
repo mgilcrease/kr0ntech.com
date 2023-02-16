@@ -10,7 +10,6 @@
 	simplify the use of vanilla js, html & css.
 */
 import { LitElement, css, html } from '../../node_modules/lit'
-import { util } from '../scripts/util.js';
 
 export class AnimatedGraph extends LitElement {
 	static get properties() {
