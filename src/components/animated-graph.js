@@ -56,7 +56,7 @@ export class AnimatedGraph extends LitElement {
 			draw() {
 				ctx.beginPath();
 				ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-				ctx.fillStyle = '#d3d3d3';
+				ctx.fillStyle = '#a0a0a0';
 				ctx.fill();	
 			}
 
@@ -85,7 +85,7 @@ export class AnimatedGraph extends LitElement {
 
 					if (distance < (canvas.width/7) * (canvas.height/7)) {
 						opacity = .9 - (distance / 20000);
-						ctx.strokeStyle = `rgba(200,200,200,${opacity})`;
+						ctx.strokeStyle = `rgba(50,50,50,${opacity})`;
 						ctx.lineWidth = 1;
 						ctx.beginPath();
 						ctx.moveTo(particles[a].x, particles[a].y);
@@ -111,7 +111,7 @@ export class AnimatedGraph extends LitElement {
 				let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
 				let directionX = particleVelocity();
 				let directionY = particleVelocity();
-				let color = '#d3d3d3';
+				let color = '#a0a0a0';
 
 				particles.push(new Particle(x, y, directionX, directionY, size, color));
 			}
