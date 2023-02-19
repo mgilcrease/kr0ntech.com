@@ -108,9 +108,10 @@ p {
 	background-size: contain;
 }
 
-#technology.container {
+#technology .container {
 	background-color: var(--main-bg-color);
 	opacity: .7;
+	max-width: 1000px;
 }
 
 #contact {
