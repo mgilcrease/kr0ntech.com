@@ -114,6 +114,19 @@ p {
 	max-width: 1000px;
 }
 
+#technology ul {
+	padding: 0 40px;
+}
+
+#technology li {
+	float: left;
+  list-style: none;
+  background-color: rgba(170, 170, 170, 0.7);
+  padding: 5px;
+  margin: 5px 10px;
+  border: 1px solid black;	
+}
+
 #contact {
 	background-color: var(--main-bg-color);
 	padding: 250px 0;
