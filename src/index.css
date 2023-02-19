@@ -135,4 +135,9 @@ p {
 	opacity: .8;
 	width: 100%;
 	margin-bottom: 0;
+	padding: 25px 0;
+}
+
+#contact p {
+	margin-bottom: 10px;
 }
