@@ -85,7 +85,7 @@ export class AnimatedGraph extends LitElement {
 
 					if (distance < (canvas.width/7) * (canvas.height/7)) {
 						opacity = .9 - (distance / 20000);
-						ctx.strokeStyle = `rgba(50,50,50,${opacity})`;
+						ctx.strokeStyle = `rgba(150,150,150,${opacity})`;
 						ctx.lineWidth = 1;
 						ctx.beginPath();
 						ctx.moveTo(particles[a].x, particles[a].y);
