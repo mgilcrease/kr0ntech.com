@@ -27,6 +27,16 @@ body {
 	color: #dededf;
 }
 
+section {
+	margin-bottom: 500px;
+}
+
+p {
+	font-size: 20px;
+	margin: 0 0 35px;
+	line-height: 1.6;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: black;
@@ -53,7 +63,7 @@ body {
 	width: 100%;
 	padding: 0;
 	background-color: #ffffff;
-	position: absolute;
+	/*position: absolute;*/
 	z-index: -1;
 	opacity: .8;
 }
@@ -77,4 +87,12 @@ body {
 
 #intro-content {
 	width: 50%;
+}
+
+#about {
+	background-color: var(--main-bg-color);
+	padding: 250px 0;
+	text-align: center;
+	opacity: .8;
+	width: 100%;
 }
