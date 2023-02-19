@@ -29,6 +29,7 @@ body {
 
 section {
 	margin-bottom: 500px;
+	z-index: -1;
 }
 
 p {
@@ -47,6 +48,7 @@ p {
 #site-header {
 	background-color: #211f5e;
 	width: 100%;
+	position: fixed;
 }
 
 #site-header .navbar-brand {
@@ -63,9 +65,8 @@ p {
 	width: 100%;
 	padding: 0;
 	background-color: #ffffff;
-	/*position: absolute;*/
-	z-index: -1;
 	opacity: .8;
+	margin-top: 70px;
 }
 
 #intro .intro-body {
@@ -95,4 +96,28 @@ p {
 	text-align: center;
 	opacity: .8;
 	width: 100%;
+}
+
+#technology {
+	background-color: var(--main-bg-color);
+	padding: 250px 0;
+	text-align: center;
+	opacity: 1;
+	width: 100%;
+	background: url("./assets/tesla-coil-wide.jpg") no-repeat center center scroll;
+	background-size: contain;
+}
+
+#technology.container {
+	background-color: var(--main-bg-color);
+	opacity: .7;
+}
+
+#contact {
+	background-color: var(--main-bg-color);
+	padding: 250px 0;
+	text-align: center;
+	opacity: .8;
+	width: 100%;
+	margin-bottom: 0;
 }
